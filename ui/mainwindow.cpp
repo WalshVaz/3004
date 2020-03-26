@@ -34,36 +34,75 @@ void MainWindow::on_pushButton_5_clicked()
 
    else if(item->text() == "Frequency"){
         ui->listWidget->clear();
-        ui->listWidget->addItem("9Hz- 10hz");
-        ui->listWidget->addItem("20hz");
-        ui->listWidget->addItem("40hz");
-        ui->listWidget->addItem("60hz");
-        ui->listWidget->addItem("80hz");
-        ui->listWidget->addItem("100hz");
-        ui->listWidget->addItem("120hz");
-       // ui->listWidget->setItemWidget(item, )
+        ui->listWidget->addItem("9Hz - 10Hz");
+        ui->listWidget->addItem("20Hz");
+        ui->listWidget->addItem("40Hz");
+        ui->listWidget->addItem("60Hz");
+        ui->listWidget->addItem("80Hz");
+        ui->listWidget->addItem("100Hz");
+        ui->listWidget->addItem("120Hz");
+
     }
 
     else if(item->text() == "Settings"){
          ui->listWidget->clear();
          ui->listWidget->addItem("Brightness");
          ui->listWidget->addItem("Children Mode");
-         ui->listWidget->addItem("Ecomomy");
+         ui->listWidget->addItem("Economy");
          ui->listWidget->addItem("Sound");
         // ui->listWidget->setItemWidget(item, )
      }
 
+    else if(item->text() == "Pain"){
+        ui->listWidget->clear();
+    }
+
+    else if(item->text() == "Head"){
+        ui->listWidget->clear();
+    }
+
+    else if(item->text() == "Cold"){
+        ui->listWidget->clear();
+    }
+
+    else if(item->text() == "Trauma"){
+        ui->listWidget->clear();
+    }
+
+    else if(item->text() == "Brightness"){
+        ui->listWidget->clear();
+    }
+
+    else if(item->text() == "Children Mode"){
+        ui->listWidget->clear();
+    }
+
+    else if(item->text() == "Economy"){
+        ui->listWidget->clear();
+    }
+
+    else if(item->text() == "Sound"){
+        ui->listWidget->clear();
+    }
 
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-    ui->listWidget->verticalScrollBar();
+    int currentIndex = ui->listWidget->currentRow();
+    QListWidgetItem *item = ui->listWidget->currentItem();
+    ui->listWidget->insertItem(currentIndex - 1, item);
+    ui->listWidget->setCurrentRow(currentIndex - 1);
+
 }
 
 void MainWindow::on_pushButton_4_clicked()
 {
-   ui->listWidget->horizontalScrollBar();
+    int currentIndex = ui->listWidget->currentRow();
+    QListWidgetItem *item = ui->listWidget->currentItem();
+    ui->listWidget->insertItem(currentIndex+1, item);
+    ui->listWidget->setCurrentRow(currentIndex+1);
+
 }
 
 void MainWindow::on_pushButton_6_clicked()
@@ -75,7 +114,9 @@ void MainWindow::on_pushButton_6_clicked()
 
 }
 
-void MainWindow::on_pushButton_7_clicked()
+
+void MainWindow::on_pushButton_8_clicked()
 {
+    //QListWidgetItem *item = ui->listWidget->currentItem();
 
 }

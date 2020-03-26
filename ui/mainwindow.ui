@@ -27,8 +27,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>280</y>
+      <x>160</x>
+      <y>290</y>
       <width>83</width>
       <height>25</height>
      </rect>
@@ -41,7 +41,7 @@
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>330</y>
+      <y>340</y>
       <width>83</width>
       <height>25</height>
      </rect>
@@ -53,8 +53,8 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>380</y>
+      <x>160</x>
+      <y>390</y>
       <width>83</width>
       <height>25</height>
      </rect>
@@ -67,7 +67,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>330</y>
+      <y>340</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -79,8 +79,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>330</y>
+      <x>60</x>
+      <y>340</y>
       <width>83</width>
       <height>25</height>
      </rect>
@@ -92,27 +92,40 @@
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>450</y>
+      <x>280</x>
+      <y>460</y>
       <width>83</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>back</string>
+     <string>Main Menu</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_7">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>450</y>
+      <x>50</x>
+      <y>240</y>
       <width>83</width>
       <height>25</height>
      </rect>
     </property>
     <property name="text">
      <string>on/off</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_8">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>460</y>
+      <width>83</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Back</string>
     </property>
    </widget>
   </widget>
@@ -139,38 +152,6 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>listWidget</receiver>
-   <slot>scrollToTop()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>190</x>
-     <y>329</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>187</x>
-     <y>253</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_4</sender>
-   <signal>clicked()</signal>
-   <receiver>listWidget</receiver>
-   <slot>scrollToBottom()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>207</x>
-     <y>427</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>249</x>
-     <y>249</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>pushButton_7</sender>
    <signal>clicked()</signal>
