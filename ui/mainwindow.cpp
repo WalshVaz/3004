@@ -10,7 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->listWidget->addItem("Frequency");
     ui->listWidget->addItem("Settings");
 
-
+    time = new QTimer(this);
+    connect(time, SIGNAL(timeout()), this, SLOT(skinOff()));
+    timer.setHMS(0,0,0);
 
 }
 
@@ -19,6 +21,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::skinOff()
+{
+    time->start(1000); // timer starts
+
+    timer = timer.addSecs(1); // adds 1 second
+    QString stringTime = timer.toString("hh : mm : ss"); // converts the time object to a string
+    ui->listWidget->addItem("SKIN ON");
+    ui->listWidget->addItem(stringTime);
+
+
+}
 void MainWindow::on_pushButton_5_clicked()
 {
     QListWidgetItem *item = ui->listWidget->currentItem();
@@ -55,18 +68,23 @@ void MainWindow::on_pushButton_5_clicked()
 
     else if(item->text() == "Pain"){
         ui->listWidget->clear();
+        skinOff();
     }
 
     else if(item->text() == "Head"){
         ui->listWidget->clear();
+        skinOff();
     }
 
     else if(item->text() == "Cold"){
         ui->listWidget->clear();
+        skinOff();
+        time->stop();
     }
 
     else if(item->text() == "Trauma"){
         ui->listWidget->clear();
+        skinOff();
     }
 
     else if(item->text() == "Brightness"){
@@ -83,6 +101,10 @@ void MainWindow::on_pushButton_5_clicked()
 
     else if(item->text() == "Sound"){
         ui->listWidget->clear();
+    }
+
+    else{
+        time->stop();
     }
 
 }
