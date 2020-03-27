@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(time, SIGNAL(timeout()), this, SLOT(skinOff()));
     timer.setHMS(0,0,0);
 
+
+
 }
 
 MainWindow::~MainWindow()
@@ -23,12 +25,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::skinOff()
 {
-    time->start(1000); // timer starts
+     time->start(1000); // timer starts
 
     timer = timer.addSecs(1); // adds 1 second
     QString stringTime = timer.toString("hh : mm : ss"); // converts the time object to a string
-    ui->listWidget->addItem("SKIN ON");
-    ui->listWidget->addItem(stringTime);
+    ui->listWidget->insertItem(0,"SKIN ON");
+    ui->listWidget->insertItem(1, stringTime);
 
 
 }
@@ -41,7 +43,7 @@ void MainWindow::on_pushButton_5_clicked()
         ui->listWidget->addItem("Pain");
         ui->listWidget->addItem("Head");
         ui->listWidget->addItem("Cold");
-        ui->listWidget->addItem("Tramua");
+        ui->listWidget->addItem("Trauma");
 
     }
 
@@ -79,8 +81,7 @@ void MainWindow::on_pushButton_5_clicked()
     else if(item->text() == "Cold"){
         ui->listWidget->clear();
         skinOff();
-        time->stop();
-    }
+      }
 
     else if(item->text() == "Trauma"){
         ui->listWidget->clear();
@@ -103,9 +104,7 @@ void MainWindow::on_pushButton_5_clicked()
         ui->listWidget->clear();
     }
 
-    else{
-        time->stop();
-    }
+
 
 }
 
@@ -133,6 +132,10 @@ void MainWindow::on_pushButton_6_clicked()
     ui->listWidget->addItem("Programs");
     ui->listWidget->addItem("Frequency");
     ui->listWidget->addItem("Settings");
+
+
+    time->stop();
+    timer.setHMS(0,0,0);
 
 }
 
